@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Eye::Notify::EyeS3::VERSION
   spec.authors       = ["Ricardo Mota"]
   spec.email         = ["ricardo@mota.cloud"]
-  spec.summary       = %q{eye to s3 object}
+  spec.summary       = %q{eye state change events to s3 JSON object}
   spec.description   = %q{eye to s3 object}
   spec.homepage      = "https://github.com/ricardosllm/eye-s3"
   spec.license       = "MIT"
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 
-  spec.add_runtime_dependency "aws-sdk", "~ 3"
+  spec.add_runtime_dependency "aws-sdk", "~> 3.0"
   spec.add_runtime_dependency "eye", ">= 0.9"
 end

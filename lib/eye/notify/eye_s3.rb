@@ -12,7 +12,6 @@ module Eye
 
       param :bucket_name, String, true
       param :region,      String, false, 'us-east-1'
-      param :key,         String, false, default_object_key
 
       def execute
         Aws::S3::Object.new(options).put object
@@ -30,9 +29,8 @@ module Eye
 
       def object
         {
-          acl:          'authenticated-read',
           content_type: 'application/json',
-          body:         body,
+          body:         body
         }
       end
 
@@ -47,14 +45,14 @@ module Eye
       def event
         {
           host:      msg_host,
-          timestamp: msg_at,
+          timestamp: msg_at.to_i,
           message:   msg_message,
           name:      msg_name,
           level:     msg_level
         }
       end
 
-      def default_object_key
+      def key
         now = Time.now
         [now.year, now.month, now.day, "#{now.to_i}_#{msg_host}.json"].join '/'
       end
