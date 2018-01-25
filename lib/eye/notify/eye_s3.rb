@@ -7,7 +7,8 @@ module Eye
     class EyeS3 < Eye::Notify::Custom
 
       # Eye.config do
-      #   s3 bucket_name: 'your-bucket-name'
+      #   eye_s3  bucket_name: 'your-bucket-name'
+      #   contact :dev, :eye_s3, '#test'
       # end
 
       param :bucket_name, String, true
