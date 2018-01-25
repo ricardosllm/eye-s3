@@ -35,6 +35,7 @@ require 'eye/notify/eye_s3'
 
 Eye.config do
   eye_s3 bucket_name: 'your-bucket-name'
+  contact :dev, :eye_s3, '#test'
 end
 ```
 
