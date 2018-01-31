@@ -30,6 +30,7 @@ module Eye
 
       def object
         {
+          acl:          'authenticated-read',
           content_type: 'application/json',
           body:         body
         }
